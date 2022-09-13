@@ -1,0 +1,5 @@
+workflows:
+  e-world:
+    name: E-comm
+    scripts:
+      - echo "Hello World!"
