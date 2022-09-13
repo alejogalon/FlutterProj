@@ -1,7 +1,9 @@
 import 'dart:isolate';
 
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:my_firstapp/data/repository/popular_product_repo.dart';
+import 'package:my_firstapp/utils/colors.dart';
 
 import '../helper/model/products_model.dart';
 
@@ -21,23 +23,44 @@ class PopularProductController extends GetxController{
   Future<void> getPopularProductList() async{//async if it returns a future data
     Response response = await popularProductRepo.getPopularProductList();
     if(response.statusCode==200){
-      print("got products");
       _popularProductList=[];
       _popularProductList.addAll(Product.fromJson(response.body).products);
-      //print(_popularProductList);
       _isLoaded = true;
       update();//same as setState()
     }else{
-
+      //print(_popularProductList);
     }
   }
 
-  void setQuantity(bool isIncreement){
-    if(isIncreement){
-      print("increement");
-      _quantity = _quantity+1;
+  void setQuantity(bool isIncrement){
+    if(isIncrement){
+      _quantity = checkQuantity(_quantity+1);
     }else{
-      _quantity = _quantity-1;
+      _quantity = checkQuantity(_quantity-1);
     }
+    update();
+  }
+  int checkQuantity(int quantity){
+    if(quantity<0){
+      Get.snackbar("Item count", "You can't reduce more!",
+       backgroundColor: AppColors.maincolor,
+        colorText: Colors.white,
+      );
+      return 0;
+    }
+    else if(quantity>20){
+      Get.snackbar("Item count", "You can't add more!",
+        backgroundColor: AppColors.maincolor,
+        colorText: Colors.white,
+      );
+      return 20;
+    }
+    else{
+      return quantity;
+    }
+
+  }
+  void initProduct(){
+    _quantity = 0;
   }
 }

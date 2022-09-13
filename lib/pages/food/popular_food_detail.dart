@@ -22,8 +22,7 @@ class PopularFoodDetail extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var product= Get.find<PopularProductController>().popularProductList[pageId];
-    //print("page is id "+pageId.toString());
-    //print("product name is "+product.name.toString());
+    Get.find<PopularProductController>().initProduct();
     return Scaffold(
       backgroundColor: Colors.white,
       body: Stack(
@@ -117,9 +116,13 @@ class PopularFoodDetail extends StatelessWidget {
                 ),
                 child: Row(
                   children: [
-                    Icon(Icons.remove,color: AppColors.signColor,),
+                    GestureDetector(
+                        onTap: (){
+                          popularProduct.setQuantity(false);
+                        },
+                        child: Icon(Icons.remove, color: AppColors.signColor,)),
                     SizedBox(width: Dimensions.width10/2,),
-                    BigText(text: "0"),
+                    BigText(text: popularProduct.quantity.toString()),
                     SizedBox(width: Dimensions.width10/2,),
                     GestureDetector(
                         onTap: (){
