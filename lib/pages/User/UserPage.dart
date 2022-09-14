@@ -20,7 +20,7 @@ class UserPage extends StatelessWidget {
   Widget build(BuildContext context) => Scaffold(
     drawer: NavigationDrawer(),
     appBar: AppBar(
-      title: const Text("Name Surename"),
+      title: const Text("Name Surname"),
       backgroundColor: AppColors.maincolor,
     ),
     body: CustomScrollView(

@@ -49,7 +49,7 @@ class NavigationDrawer extends StatelessWidget {
             ),
             SizedBox(height: Dimensions.height10),
             Text(
-              'Name Surename',
+              'Name Surname',
               style: TextStyle(fontSize: Dimensions.width15,
                   color: AppColors.mainBlackColor),
             ),
@@ -80,7 +80,7 @@ class NavigationDrawer extends StatelessWidget {
         ),
         ListTile(
           leading: const Icon(Icons.list_alt_outlined),
-          title: const Text("Schedule Viewer"),
+          title: const Text("Scheduler Viewer"),
             onTap: () {
             //close navigation drawer before
             Navigator.pop(context);
