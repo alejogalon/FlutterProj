@@ -48,7 +48,7 @@ class _EventEditingPageState extends State<EventEditingPage> {
       backgroundColor: AppColors.maincolor,
     ),
     body: SingleChildScrollView(
-      padding: EdgeInsets.all(12),
+      //padding: EdgeInsets.all(12),
       child: Form(
         key: _formKey,
         child: Column(
@@ -63,7 +63,7 @@ class _EventEditingPageState extends State<EventEditingPage> {
   List<Widget> buildEditingActions() => [
       ElevatedButton.icon(
         style: ElevatedButton.styleFrom(
-          primary: Colors.transparent,
+          backgroundColor: Colors.transparent,
           shadowColor: Colors.transparent,
         ),
         onPressed: (){},

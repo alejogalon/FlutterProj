@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:my_firstapp/pages/Navigation/Navigation_drawer.dart';
 import 'package:my_firstapp/utils/colors.dart';
 
-import '../../widgets/CalendarWidget.dart';
+import '../../widgets/calendar_widget.dart';
+import '../../widgets/calendar_widget_copy.dart';
 import 'event_editing_page.dart';
 
 class WorkScheduler extends StatelessWidget {
@@ -16,7 +17,7 @@ class WorkScheduler extends StatelessWidget {
       title: const Text("Scheduler Viewer"),
       backgroundColor: AppColors.maincolor,
     ),
-    body: CalendarWidget(),
+    body: CalendarWidgetCopy(),
     floatingActionButton: FloatingActionButton(
       child: Icon(Icons.add, color: AppColors.mainBlackColor),
       backgroundColor: AppColors.maincolor,

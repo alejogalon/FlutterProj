@@ -43,7 +43,7 @@ class NavigationDrawer extends StatelessWidget {
           children: [
             CircleAvatar(
               radius: 52,
-                backgroundImage: NetworkImage(
+                backgroundImage: ExactAssetImage(
                     AppConstants.PROFILE_PICTURE_URL
                 ),
             ),

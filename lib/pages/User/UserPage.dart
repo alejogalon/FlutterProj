@@ -32,7 +32,7 @@ class UserPage extends StatelessWidget {
           backgroundColor: AppColors.yellowColor,
           expandedHeight: 400,
           flexibleSpace: FlexibleSpaceBar(
-            background: Image.network(
+            background: Image.asset(
               AppConstants.PROFILE_PICTURE_URL,
               width: double.maxFinite,
               fit: BoxFit.cover,
